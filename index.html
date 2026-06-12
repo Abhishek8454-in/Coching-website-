@@ -1,1 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Chandra Computer Coaching</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f7fb;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#002147;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#fff;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+color:#fff;
+}
+
+.menu-btn{
+display:none;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 8%;
+color:white;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero-content h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero-content span{
+color:#00d4ff;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#00d4ff;
+color:#000;
+font-weight:600;
+border-radius:5px;
+}
+
+.section-title{
+text-align:center;
+padding:80px 20px 50px;
+}
+
+.section-title h2{
+font-size:42px;
+color:#002147;
+}
+
+.about{
+padding:80px 8%;
+text-align:center;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+line-height:1.9;
+}
+
+.courses{
+padding:80px 8%;
+background:#fff;
+}
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.course-card{
+background:#f8f8f8;
+padding:30px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.course-card h3{
+color:#002147;
+margin-bottom:15px;
+}
+
+.course-card p{
+line-height:1.8;
+}
+
+.lab{
+padding:80px 8%;
+background:#eef4ff;
+}
+
+.lab-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.lab-grid img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.teachers{
+padding:80px 8%;
+background:#fff;
+}
+
+.teacher-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.teacher-card{
+background:#f8f8f8;
+border-radius:10px;
+overflow:hidden;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.teacher-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.teacher-card h3{
+padding-top:15px;
+color:#002147;
+}
+
+.teacher-card p{
+padding:10px 0 20px;
+}
+
+.stats{
+padding:80px 8%;
+background:#002147;
+color:white;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.stat-box h2{
+font-size:50px;
+color:#00d4ff;
+}
+
+.testimonials{
+padding:80px 8%;
+background:#fff;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.testimonial{
+background:#f8f8f8;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.testimonial p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+.admission{
+padding:80px 8%;
+background:#eef4ff;
+}
+
+.admission form{
+max-width:700px;
+margin:auto;
+}
+
+.admission input,
+.admission select,
+.admission textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+outline:none;
+border-radius:5px;
+}
+
+.admission button{
+background:#002147;
+color:white;
+border:none;
+padding:15px 30px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.contact{
+padding:80px 8%;
+background:#fff;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-box{
+background:#f8f8f8;
+padding:30px;
+border-radius:10px;
+}
+
+.contact-box h3{
+margin-bottom:15px;
+color:#002147;
+}
+
+.contact-box p{
+margin-bottom:10px;
+line-height:1.8;
+}
+
+footer{
+background:#002147;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.floating-contact{
+position:fixed;
+right:15px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:9999;
+}
+
+.float-btn{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+.call-btn{
+background:#007bff;
+color:white;
+}
+
+.whatsapp-btn{
+background:#25D366;
+}
+
+.map-btn{
+background:#e53935;
+color:white;
+}
+
+.whatsapp-btn img{
+width:30px;
+height:30px;
+}
+@media(max-width:900px){
+
+#mobileMenu{
+display:none;
+}
+
+#mobileMenu.show{
+display:flex !important;
+flex-direction:column;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#002147;
+padding:20px;
+gap:15px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.course-grid,
+.teacher-grid,
+.testimonial-grid,
+.contact-grid,
+.lab-grid,
+.stats{
+grid-template-columns:1fr;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">CHANDRA COMPUTER</div>
+
+<nav id="mobileMenu">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#teachers">Teachers</a>
+<a href="#admission">Admission</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Learn Computer
+<span>Build Your Future</span>
+</h1>
+
+<p>
+Join Chandra Computer Coaching Institute and learn practical computer skills,
+typing, programming, DCA, ADCA, Tally and more.
+</p>
+
+<a href="#admission" class="btn">Apply Now</a>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<div class="section-title">
+<h2>About Institute</h2>
+</div>
+
+<p>
+Chandra Computer Coaching Institute provides quality computer education
+with experienced teachers, modern computer labs and practical learning.
+Our mission is to prepare students for jobs, business and higher education.
+</p>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>1000+</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-box">
+<h2>10+</h2>
+<p>Courses</p>
+</div>
+
+<div class="stat-box">
+<h2>15+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-box">
+<h2>95%</h2>
+<p>Success Rate</p>
+</div>
+
+</section>
+
+<section class="courses" id="courses">
+
+<div class="section-title">
+<h2>Popular Courses</h2>
+</div>
+
+<div class="course-grid">
+
+<div class="course-card">
+<h3>DCA</h3>
+<p>Diploma in Computer Applications.</p>
+</div>
+
+<div class="course-card">
+<h3>ADCA</h3>
+<p>Advanced Diploma in Computer Applications.</p>
+</div>
+
+<div class="course-card">
+<h3>Tally Prime</h3>
+<p>Professional accounting software training.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="lab">
+
+<div class="section-title">
+<h2>Computer Lab</h2>
+</div>
+
+<div class="lab-grid">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800">
+
+<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800">
+
+</div>
+
+</section>
+
+<section class="teachers" id="teachers">
+
+<div class="section-title">
+<h2>Our Teachers</h2>
+</div>
+
+<div class="teacher-grid">
+
+<div class="teacher-card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800">
+<h3>Chandra Sir</h3>
+<p>Computer Expert</p>
+</div>
+
+<div class="teacher-card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800">
+<h3>Amit Sir</h3>
+<p>Tally Trainer</p>
+</div>
+
+<div class="teacher-card">
+<img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=800">
+<h3>Ravi Sir</h3>
+<p>Programming Trainer</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<div class="section-title">
+<h2>Student Reviews</h2>
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<p>Best computer institute in our area.</p>
+<h4>- Rahul</h4>
+</div>
+
+<div class="testimonial">
+<p>Excellent teaching and practical classes.</p>
+<h4>- Priya</h4>
+</div>
+
+<div class="testimonial">
+<p>I learned Tally and got a job.</p>
+<h4>- Akash</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="admission" id="admission">
+
+<div class="section-title">
+<h2>Admission Form</h2>
+</div>
+
+<form>
+
+<input type="text" placeholder="Student Name">
+
+<input type="tel" placeholder="Mobile Number">
+
+<input type="email" placeholder="Email Address">
+
+<select>
+<option>Select Course</option>
+<option>DCA</option>
+<option>ADCA</option>
+<option>Tally Prime</option>
+<option>Typing Course</option>
+</select>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Apply Now</button>
+
+</form>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<h3>Institute Address</h3>
+<p>Chandra Computer Coaching Institute</p>
+<p>Lucknow, Uttar Pradesh</p>
+<p>India</p>
+</div>
+
+<div class="contact-box">
+<h3>Contact Details</h3>
+<p>📞 +91 8454013314</p>
+<p>📧 info@chandracomputer.com</p>
+<p>🕒 Mon - Sat : 8 AM - 8 PM</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>CHANDRA COMPUTER COACHING INSTITUTE</h3>
+
+<p>📞 +91 8454013314</p>
+
+<p>📍 Lucknow, Uttar Pradesh</p>
+
+<br>
+
+<p>© 2026 Chandra Computer Coaching Institute. All Rights Reserved.</p>
+
+</footer>
+
+<div class="floating-contact">
+
+<a href="tel:8454013314" class="float-btn call-btn">
+📞
+</a>
+
+<a href="https://wa.me/918454013314" target="_blank" class="float-btn whatsapp-btn">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<a href="https://maps.google.com/?q=Lucknow" target="_blank" class="float-btn map-btn">
+📍
+</a>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+</script>
+
+</body>
+  </html>
